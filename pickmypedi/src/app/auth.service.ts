@@ -32,11 +32,24 @@ export class AuthService {
             this.cookie.set('username',user.username);
             this.cookie.set('firstName',user.attributes.firstName);
             this.cookie.set('lastName',user.attributes.lastName);
-            this.cookie.set('lastName',user.attributes.lastName);
+            this.cookie.set('email',user.attributes.email);
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
     })
 }
+
+    logout(){
+        Auth.signOut()
+        .then(data=>{
+            this.cookie.delete('auth'),
+            this.cookie.delete('username'),
+            this.cookie.delete('firstName'),
+            this.cookie.delete('lastName'),
+            this.cookie.delete('email')
+        })
+        .catch(err=>console.log(err));
+}
+
 
     createAccount(
         username: string,
