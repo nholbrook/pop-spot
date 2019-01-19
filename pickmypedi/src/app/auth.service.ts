@@ -1,11 +1,13 @@
 import { Auth } from 'aws-amplify';
 import { AmplifyService } from 'aws-amplify-angular';
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 export class AuthService {
     constructor(
       private amplify: AmplifyService,
+      private cookie: CookieService,
     ) {}
 
     authState: string;
@@ -18,8 +20,23 @@ export class AuthService {
 
     login(username: string, password: string){
         Auth.signIn(username,password)
+        .then(user=>{
+            this.cookie.set('username',user['username']);
+            this.cookie.set(
+                'auth',
+                user['signInUserSession']['accessToken']['jwtToken']
+
+            );
+            Auth.currentAuthenticatedUser().then(user=>{
+
+            this.cookie.set('username',user.username);
+            this.cookie.set('firstName',user.attributes.firstName);
+            this.cookie.set('lastName',user.attributes.lastName);
+            this.cookie.set('lastName',user.attributes.lastName);
+        })
         .catch(err => console.log(err))
-    }
+    })
+}
 
     createAccount(
         username: string,
