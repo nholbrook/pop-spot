@@ -4,5 +4,6 @@ target 'PredictiveTaxiHeatmap' do
   pod 'GooglePlaces'
   pod 'Google-Maps-iOS-Utils'
   pod 'Floaty'
+  pod 'TextFieldEffects'
 
 end

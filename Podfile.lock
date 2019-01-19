@@ -23,12 +23,14 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
+  - TextFieldEffects (1.5.1)
 
 DEPENDENCIES:
   - Floaty
   - Google-Maps-iOS-Utils
   - GoogleMaps
   - GooglePlaces
+  - TextFieldEffects
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -36,13 +38,15 @@ SPEC REPOS:
     - Google-Maps-iOS-Utils
     - GoogleMaps
     - GooglePlaces
+    - TextFieldEffects
 
 SPEC CHECKSUMS:
   Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
   Google-Maps-iOS-Utils: c32891ff472eaaa1fca032beedafa1a013af7875
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: df561e55920ee6e7d99c80224fc0dac8f9f3c4ea
+PODFILE CHECKSUM: a81639ba7cb9a7005282c4ee758ddb070c20aab3
 
 COCOAPODS: 1.5.3

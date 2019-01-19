@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6EC4054141C6923B66086DA51ADB0E7"
-               BlueprintName = "Pods-PredictiveTaxiHeatmap"
+               BlueprintIdentifier = "D246EB11E9552BED68B18D7F95696638"
+               BlueprintName = "TextFieldEffects"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-PredictiveTaxiHeatmap.a">
+               BuildableName = "libTextFieldEffects.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
