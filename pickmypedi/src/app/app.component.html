@@ -1,9 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<!DOCTYPE html>
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
-    nice
-    I'm testinghello testfadfasdfasdfs
+    <br>
+
+    <script>
+    var map:
+    function initMap(){
+      map = new google.maps.Map(document.getElementById('map'),{
+        center: {lat:-34.397, lng: 150.644},
+        zoom:10
+      });
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4I_onZPycvIImIXC7hm5ch9JpoL-zo4A&callback=initMap"
+    async defer></script>
   </h1>
 </div>
 <router-outlet></router-outlet>
+ <!-- api key
+AIzaSyC4I_onZPycvIImIXC7hm5ch9JpoL-zo4A -->
