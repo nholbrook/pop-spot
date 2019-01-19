@@ -6,14 +6,22 @@
 //  Copyright © 2019 Nick Holbrook. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import GoogleMaps
-//import Floaty
+import UIKit
+import Floaty
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
+    private var mapView: GMSMapView!
+    private var heatmapLayer: GMUHeatmapTileLayer!
+    private var locationManager: CLLocationManager!
+
+    private var gradientColors = [UIColor.green, UIColor.red]
+    private var gradientStartPoints = [0.2, 1.0] as? [NSNumber]
+    
     override func viewDidLoad() {
-        let locationManager = CLLocationManager()
+        locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
@@ -26,25 +34,34 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 
                 let camera = GMSCameraPosition.camera(withLatitude: locValue.latitude, longitude: locValue.longitude, zoom: 10.0)
                 let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+                
+                //mapView.settings.myLocationButton = true
                 view = mapView
                 
-                var heatmapLayer: GMUHeatmapTileLayer!
                 heatmapLayer = GMUHeatmapTileLayer()
-                heatmapLayer.map = mapView
+                heatmapLayer.radius = 80
+                heatmapLayer.opacity = 0.8
+                heatmapLayer.gradient = GMUGradient(colors: gradientColors,
+                                                    startPoints: gradientStartPoints!,
+                                                    colorMapSize: 256)
                 addHeatmap()
+                
+                // Set the heatmap to the mapview.
+                heatmapLayer.map = mapView
             }
         }
         
-        /*let floaty = Floaty()
-        floaty.addItem(title: "Hello, World!")
-        self.view.addSubview(floaty)*/
+        let floaty = Floaty()
+        floaty.buttonColor = UIColor.black
+        floaty.plusColor = UIColor.white
+        self.view.addSubview(floaty)
     }
     
     func addHeatmap()  {
         var list = [GMUWeightedLatLng]()
         do {
             // Get the data: latitude/longitude positions of police stations.
-            if let path = Bundle.main.url(forResource: "police_stations", withExtension: "json") {
+            if let path = Bundle.main.url(forResource: "pickups", withExtension: "json") {
                 let data = try Data(contentsOf: path)
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 if let object = json as? [[String: Any]] {
@@ -64,6 +81,4 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         // Add the latlngs to the heatmap layer.
         heatmapLayer.weightedData = list
     }
-
-
 }
