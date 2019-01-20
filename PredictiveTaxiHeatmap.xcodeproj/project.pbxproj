@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A603CF021F4DDFB0046B364 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A603CEF21F4DDFB0046B364 /* HistoryTableViewController.swift */; };
 		4A697FBC21F334D200203C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A697FBB21F334D200203C6B /* AppDelegate.swift */; };
 		4A697FBE21F334D200203C6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A697FBD21F334D200203C6B /* ViewController.swift */; };
 		4A697FC121F334D200203C6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A697FBF21F334D200203C6B /* Main.storyboard */; };
-		4A697FC421F334D200203C6B /* PredictiveTaxiHeatmap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A697FC221F334D200203C6B /* PredictiveTaxiHeatmap.xcdatamodeld */; };
 		4A697FC621F334D300203C6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A697FC521F334D300203C6B /* Assets.xcassets */; };
 		4A697FD421F334D300203C6B /* PredictiveTaxiHeatmapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A697FD321F334D300203C6B /* PredictiveTaxiHeatmapTests.swift */; };
 		4A697FDF21F334D400203C6B /* PredictiveTaxiHeatmapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A697FDE21F334D400203C6B /* PredictiveTaxiHeatmapUITests.swift */; };
@@ -38,11 +38,11 @@
 
 /* Begin PBXFileReference section */
 		2BF1D63C2B5411B427430828 /* Pods-PredictiveTaxiHeatmap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PredictiveTaxiHeatmap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PredictiveTaxiHeatmap/Pods-PredictiveTaxiHeatmap.debug.xcconfig"; sourceTree = "<group>"; };
+		4A603CEF21F4DDFB0046B364 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		4A697FB821F334D200203C6B /* PredictiveTaxiHeatmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PredictiveTaxiHeatmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A697FBB21F334D200203C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A697FBD21F334D200203C6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4A697FC021F334D200203C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4A697FC321F334D200203C6B /* PredictiveTaxiHeatmap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PredictiveTaxiHeatmap.xcdatamodel; sourceTree = "<group>"; };
 		4A697FC521F334D300203C6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A697FC821F334D300203C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A697FCA21F334D300203C6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,8 +126,8 @@
 				4A697FC521F334D300203C6B /* Assets.xcassets */,
 				4A697FC721F334D300203C6B /* LaunchScreen.storyboard */,
 				4A697FCA21F334D300203C6B /* Info.plist */,
-				4A697FC221F334D200203C6B /* PredictiveTaxiHeatmap.xcdatamodeld */,
 				4A697FEC21F3425E00203C6B /* MapViewController.swift */,
+				4A603CEF21F4DDFB0046B364 /* HistoryTableViewController.swift */,
 			);
 			path = PredictiveTaxiHeatmap;
 			sourceTree = "<group>";
@@ -341,8 +341,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A603CF021F4DDFB0046B364 /* HistoryTableViewController.swift in Sources */,
 				4A697FBE21F334D200203C6B /* ViewController.swift in Sources */,
-				4A697FC421F334D200203C6B /* PredictiveTaxiHeatmap.xcdatamodeld in Sources */,
 				4A697FBC21F334D200203C6B /* AppDelegate.swift in Sources */,
 				4A697FED21F3425E00203C6B /* MapViewController.swift in Sources */,
 			);
@@ -681,19 +681,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4A697FC221F334D200203C6B /* PredictiveTaxiHeatmap.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4A697FC321F334D200203C6B /* PredictiveTaxiHeatmap.xcdatamodel */,
-			);
-			currentVersion = 4A697FC321F334D200203C6B /* PredictiveTaxiHeatmap.xcdatamodel */;
-			path = PredictiveTaxiHeatmap.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4A697FB021F334D200203C6B /* Project object */;
 }

@@ -24,8 +24,9 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
+  - SkyFloatingLabelTextField (3.6.0)
   - SwiftyJSON (4.2.0)
-  - TextFieldEffects (1.5.1)
+  - Toaster (2.1.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -33,8 +34,9 @@ DEPENDENCIES:
   - Google-Maps-iOS-Utils
   - GoogleMaps
   - GooglePlaces
+  - SkyFloatingLabelTextField (~> 3.0)
   - SwiftyJSON
-  - TextFieldEffects
+  - Toaster
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -43,8 +45,9 @@ SPEC REPOS:
     - Google-Maps-iOS-Utils
     - GoogleMaps
     - GooglePlaces
+    - SkyFloatingLabelTextField
     - SwiftyJSON
-    - TextFieldEffects
+    - Toaster
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -52,9 +55,10 @@ SPEC CHECKSUMS:
   Google-Maps-iOS-Utils: c32891ff472eaaa1fca032beedafa1a013af7875
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
-  TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
+  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: d478402e218472ec88712c1afc8d51e74926c368
+PODFILE CHECKSUM: 350ef81e82f16cf7154d52c9f77707420917258c
 
 COCOAPODS: 1.5.3

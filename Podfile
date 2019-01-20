@@ -4,8 +4,9 @@ target 'PredictiveTaxiHeatmap' do
   pod 'GooglePlaces'
   pod 'Google-Maps-iOS-Utils'
   pod 'Floaty'
-  pod 'TextFieldEffects'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Toaster'
  
 end
