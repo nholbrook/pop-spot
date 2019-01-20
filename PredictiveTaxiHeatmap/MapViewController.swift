@@ -10,19 +10,27 @@ import Foundation
 import GoogleMaps
 import UIKit
 import Floaty
+import Alamofire
+import SwiftyJSON
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     private var mapView: GMSMapView!
     private var heatmapLayer: GMUHeatmapTileLayer!
     private var locationManager: CLLocationManager!
 
     private var gradientColors = [UIColor.green, UIColor.red]
-    private var gradientStartPoints = [0.2, 1.0] as? [NSNumber]
+    private var gradientStartPoints = [0.2, 1.0] as [NSNumber]
+    
+    private var list: [GMUWeightedLatLng]!
     
     override func viewDidLoad() {
+        //populateList()
+        
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
+        
+        mapView.delegate = self
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -42,19 +50,47 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 heatmapLayer.radius = 80
                 heatmapLayer.opacity = 0.8
                 heatmapLayer.gradient = GMUGradient(colors: gradientColors,
-                                                    startPoints: gradientStartPoints!,
+                                                    startPoints: gradientStartPoints,
                                                     colorMapSize: 256)
-                addHeatmap()
+                /*if (self.list != nil) {
+                    heatmapLayer.weightedData = self.list
+                } else {
+                    print("list null")
+                }*/
                 
+                addHeatmap()
                 // Set the heatmap to the mapview.
+                //heatmapLayer.weightedData = [GMUWeightedLatLng]();
                 heatmapLayer.map = mapView
             }
         }
         
         let floaty = Floaty()
-        floaty.buttonColor = UIColor.black
+        floaty.buttonColor = UIColor.darkGray
         floaty.plusColor = UIColor.white
         self.view.addSubview(floaty)
+    }
+    
+    func populateList() {
+        self.list = [GMUWeightedLatLng]();
+        
+        Alamofire.request("https://7abzu16vk0.execute-api.us-west-2.amazonaws.com/Prod")
+        .responseJSON(completionHandler: { response in
+            if let result = response.result.value {
+                let json = JSON(result)
+                for item in json["Items"] {
+                    print(item.1["latitude"]["S"].doubleValue)
+                    
+                    let lat = item.1["latitude"]["S"].doubleValue
+                    let lng = item.1["longitude"]["S"].doubleValue
+                    let coords = GMUWeightedLatLng(coordinate: CLLocationCoordinate2DMake(lat , lng), intensity: 1.0)
+                    print(coords.intensity)
+                    self.list.append(coords)
+                }
+            }
+            self.heatmapLayer.weightedData = self.list
+            self.heatmapLayer.clearTileCache()
+        })
     }
     
     func addHeatmap()  {

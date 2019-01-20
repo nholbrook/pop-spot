@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C51E3579F69E985BF9CE212F308E0782"
-               BlueprintName = "Pods-PredictiveTaxiHeatmap"
+               BlueprintIdentifier = "08A16B7582F00884501F5E7A9B8E6FB4"
+               BlueprintName = "Alamofire"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-PredictiveTaxiHeatmap.a">
+               BuildableName = "libAlamofire.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

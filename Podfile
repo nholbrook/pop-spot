@@ -5,5 +5,7 @@ target 'PredictiveTaxiHeatmap' do
   pod 'Google-Maps-iOS-Utils'
   pod 'Floaty'
   pod 'TextFieldEffects'
-
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+ 
 end
