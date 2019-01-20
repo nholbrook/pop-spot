@@ -1,0 +1,6 @@
+module Pods_PredictiveTaxiHeatmap {
+  umbrella header "Pods-PredictiveTaxiHeatmap-umbrella.h"
+
+  export *
+  module * { export * }
+}
