@@ -1,6 +1,6 @@
 # Pop Spot
 
-Made for SpartaHack V
+Made for Spartahacks V
 
 # Inspiration
 
