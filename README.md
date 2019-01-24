@@ -1,3 +1,7 @@
+# Pop Spot
+
+Made for SpartaHack V
+
 # Inspiration
 
 While on a recent trip, I realized there was no real way for Uber / Taxi drivers to know where they should be waiting at in order to minimize their travel time in between pickups. Having a tool that helps them understand where they should be waiting at for their next pickup would allow then maximize their profits.
